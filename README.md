@@ -56,30 +56,7 @@ Visit `http://localhost:3000` to see the application in action.
 
 ### POST `/api/generate-questions`
 
-Generates AI-driven questions based on the provided topic.
-
-**Request Body:**
-
-```json
-{
-  "title": "Customer Feedback"
-}
-```
-
-**Response:**
-
-```json
-{
-  "questions": [
-    "What do you like most about customer feedback?",
-    "What do you like least about customer feedback?",
-    "How could customer feedback be improved?",
-    "How likely are you to continue using customer feedback?",
-    "What additional features would you like to see in customer feedback?"
-  ],
-  "source": "local-generator"
-}
-```
+Generates AI-driven questions based on the provided topic
 
 ## ✅ Future Improvements
 
