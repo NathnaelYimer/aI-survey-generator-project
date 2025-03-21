@@ -17,17 +17,6 @@ A Next.js-based survey generator that uses AI-driven logic to generate relevant 
 - Database: MongoDB (Planned with Prisma ORM integration)
 - AI Integration: Local category-based question generator (OpenAI-compatible logic)
 
-## 📂 Project Structure
-
-```
-├── pages
-│   ├── api
-│   │     └── generate-questions.ts
-│   └── index.tsx
-├── components
-└── README.md
-```
-
 ## 📋 Setup Instructions
 
 ### 1. Clone the Repository
