@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -53,7 +52,7 @@ export function SurveyGenerator() {
       setQuestions(data.questions)
       setAnswers(Array(data.questions.length).fill(""))
       setSubmitted(false)
-    } catch (error) {
+    } catch {
       toast.error("Failed to generate questions. Please try again.")
     } finally {
       setIsGenerating(false)
@@ -91,7 +90,7 @@ export function SurveyGenerator() {
 
       setSubmitted(true)
       toast.success("Your survey responses have been submitted.")
-    } catch (error) {
+    } catch {
       toast.error("Failed to submit survey. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -190,4 +189,3 @@ export function SurveyGenerator() {
     </div>
   )
 }
-
