@@ -54,6 +54,7 @@ export function SurveyGenerator() {
       setAnswers(Array(data.questions.length).fill(""))
       setSubmitted(false)
     } catch (error) {
+      console.error("Error generating questions:", error) // ✅ Log the error
       toast.error("Failed to generate questions. Please try again.")
     } finally {
       setIsGenerating(false)
@@ -92,6 +93,7 @@ export function SurveyGenerator() {
       setSubmitted(true)
       toast.success("Your survey responses have been submitted.")
     } catch (error) {
+      console.error("Error submitting survey:", error) // ✅ Log the error
       toast.error("Failed to submit survey. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -190,4 +192,3 @@ export function SurveyGenerator() {
     </div>
   )
 }
-
