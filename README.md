@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Survey Generator
 
-## Getting Started
+A Next.js-based survey generator that uses AI-driven logic to generate relevant questions from a given title. Users can input a topic, receive dynamically generated questions, and interact with a clean, modern UI.
 
-First, run the development server:
+## 🚀 Features
+
+- AI-driven Question Generation: Generates five questions based on the provided topic.
+- Modern UI: Built with Next.js and styled using Tailwind CSS.
+- Dynamic Survey Creation: Automatically categorizes the topic and provides tailored questions.
+- Error Handling: Robust error validation for user input.
+- Deployed on Vercel: [Live Demo](https://a-i-survey-generator-project.vercel.app/)
+
+## 🛠️ Tech Stack
+
+- Frontend: Next.js, Tailwind CSS
+- Backend: Next.js API Routes (Node.js)
+- Database: MongoDB (Planned with Prisma ORM integration)
+- AI Integration: Local category-based question generator (OpenAI-compatible logic)
+
+## 📂 Project Structure
+
+```
+├── pages
+│   ├── api
+│   │     └── generate-questions.ts
+│   └── index.tsx
+├── components
+└── README.md
+```
+
+## 📋 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/ai-survey-generator.git
+cd ai-survey-generator
+```
+
+### 2. Install Dependencies
+
+Ensure you have Node.js and npm installed.
+
+```bash
+npm install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env.local` file in the root directory and add the following:
+
+```
+I use the google-api to genrate the question locally but if u have the openAi api key for the plan u paid u can use that instead of the googlde api-key in .env.local
+OPENAI_API_KEY=your-openai-key
+DATABASE_URL=your-mongodb-url
+```
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the application in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### POST `/api/generate-questions`
 
-## Learn More
+Generates AI-driven questions based on the provided topic.
 
-To learn more about Next.js, take a look at the following resources:
+**Request Body:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+  "title": "Customer Feedback"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Response:**
 
-## Deploy on Vercel
+```json
+{
+  "questions": [
+    "What do you like most about customer feedback?",
+    "What do you like least about customer feedback?",
+    "How could customer feedback be improved?",
+    "How likely are you to continue using customer feedback?",
+    "What additional features would you like to see in customer feedback?"
+  ],
+  "source": "local-generator"
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✅ Future Improvements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Integrate OpenAI for question generation by paying the open-ai key 
